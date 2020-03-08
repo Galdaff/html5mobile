@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Worker Demo</h1>
+  <p>
+    Count numbers: <output id="result"></output>
+  </p>
+  <button onclick="startWorker()">Start worker</button>
+  <button onclick="stopWorker()">Stop worker</button>
+
+  <script>
+    let workerIns;
+
+    function startWorker() {
+      if (typeof(Worker) !== "undefined") {
+        if (typeof(workerIns) == "undefined") {
+          workerIns = new Worker("../js/demo_worker.js");
+        }
+        workerIns.onmessage = function(event) {
+          document.querySelector("#result").innerHTML = event.data;
+        }
+      } else {
+        document.querySelector("#result").innerHTML = "Sorry! No Web worker support.";
+      }
+    }
+
+    function stopWorker() {
+      workerIns.terminate();
+    }
+  </script>
+</body>
+
+</html>

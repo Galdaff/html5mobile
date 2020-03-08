@@ -18,6 +18,13 @@ public class MainActivity extends AppCompatActivity {
         webView = findViewById(R.id.webViewContainer);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("file:///android_asset/www/js/index.html");
+        webView.loadUrl("file:///android_asset/www/index.html");
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (webView.canGoBack()) {
+            webView.goBack();
+        }
     }
 }

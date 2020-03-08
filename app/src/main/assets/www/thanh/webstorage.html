@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Storage Demo</h1>
+  <hr>
+  <h3>Local Storage</h3>
+  <p>
+    <button onclick="clickCounter()">Click me!</button>
+  </p>
+  <div id="result"></div>
+  <p>Click the button to see the counter increase.</p>
+  <p>close the browser tab (or window), try again and the counter will continue to count (not reset).</p>
+  <button onclick="clearCounter()">Reset</button>
+  <h3>Session Storage</h3>
+  <p>
+    <button onclick="clickCounterSession()">Click me!</button>
+  </p>
+  <div id="resultSession"></div>
+  <p>Click the button to see the counter increase.</p>
+  <p>close the browser tab (or window), try again and the counter will be reset.</p>
+  <button onclick="clearCounterSession()">Reset</button>
+
+  <script>
+    function clickCounter() {
+      if (typeof(Storage) !== "undefined") {
+        if (localStorage.clickcount) {
+          localStorage.clickcount = localStorage.clickcount*1 + 1;
+        } else {
+          localStorage.clickcount = 1;
+        }
+        document.querySelector("#result").innerHTML = `You have clicked the button ${localStorage.clickcount} time(s).`;
+      } else {
+        document.querySelector("#result").innerHTML = "Sorry, your browser does not support web storage...";
+      }
+    }
+
+    function clearCounter() {
+      localStorage.removeItem("clickcount");
+      document.querySelector("#result").innerHTML = `You have clicked the button 0 time(s).`;
+    }
+
+    //---------------------------------------------------------
+    function clickCounterSession() {
+      if (typeof(Storage) !== "undefined") {
+        if (sessionStorage.clickcountSession) {
+          sessionStorage.clickcountSession = sessionStorage.clickcountSession*1 + 1;
+        } else {
+          sessionStorage.clickcountSession = 1;
+        }
+        document.querySelector("#resultSession").innerHTML = `You have clicked the button ${sessionStorage.clickcountSession} time(s) in this session.`;
+      } else {
+        document.querySelector("#resultSession").innerHTML = "Sorry, your browser does not support web storage...";
+      }
+    }
+
+    function clearCounterSession() {
+      sessionStorage.removeItem("clickcountSession");
+      document.querySelector("#resultSession").innerHTML = `You have clicked the button 0 time(s) in this session.`;
+    }
+  </script>
+</body>
+
+</html>
