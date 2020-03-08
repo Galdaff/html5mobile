@@ -1,80 +1,83 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Canvas</title>
-    <script>
-function fill() {
-    var c = document.getElementById("myCanvas");
-    var ctx = c.getContext("2d");
-    clearCanvas (ctx,0,0,200,100);
-    ctx.fillStyle = #FF0000;
-    ctx.fillRect(0,0,150,75);
-}
-function clearCanvas(ctx,x,y,width,height) {
-    ctx.fillSytle = "#FFFFFF";
-    ctx.fillRect(x,y,width,height);
-}
-function drawPath() {
-    var c = document.getElementById("myCanvas");
-    var ctx = c.getContext("2d");
-    clearCanvas(ctx,0,0,200,100);
-    ctx.moveTo(0,0);
-    ctx.lineTo(200,100);
-    ctx.stroke();
-}
-function drawCircle() {
-    var c = document.getElementById("myCanvas");
-    var ctx = c.getContext("2d");
-    clearCanvas(ctx,0,0,200,100);
-    ctx.beginPath();
-    ctx.arc(95,50,40,0,2*Math.PI);
-    ctx.stroke();
-}
-function writText() {
-    var c = document.getElementById("myCanvas");
-    var ctx = c.getContext("2d");
-    clearCanvas(ctx,0,0,200,100);
-    ctx.font = "30px Arial";
-    ctx.strokeText("Canvas",10,50);
-}
-function createLinear() {
-    var c = document.getElementById("myCanvas");
-    var ctx = c.getContext("2d");
-    clearCanvas (ctx,0,0,200,100);
-
-    //create gradient
-    var grd = ctx.createRadialGradient;
-    grd.addColorStop(0,"red");
-    grd.addColorStop(1,"white");
-
-    //Fill with gradient
-    ctx.fillStyle = grd;
-    ctx.fillRect(10,10150,80);
-}
-function drawImg() {
-    var c = document.getElementById("myCanvas");
-    var ctx = c.getContext("2d");
-    clearCanvas(ctx,0,0,200,100);
-    var img = document.getElementById("scream");
-    ctx.drawImage(img,0,0);
-}
-</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Canvas</title>
 </head>
+
 <body>
 
-<h1>Canvas Demo</h1>
+  <h1>Canvas Demo</h1>
 
-Image: <img id="scream" src="scream.jpg" alt="The Scream" width="150" height="80"><br/>
-Canvas:
-<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000"></canvas><br/>
-<input type="button" value="Fill" onclick="fill();"/>
-<input type="button" value="Draw Path" onclick="drawPath();"/>
-<input type="button" value="Draw Circle" onclick="drawCircle();"/>
-<input type="button" value="Write Text" onclick="writeText();"/>
-<input type="button" value="Apply Circle Gradient" onclick="createLinear();"/>
-<input type="button" value="Draw Image" onclick="drawImg();"/>
+  Image: <img id="scream" src="scream.jpg" alt="The Scream" width="150" height="80"><br />
+  Canvas:
+  <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000"></canvas><br />
+  <input type="button" value="Fill" onclick="fill();" />
+  <input type="button" value="Draw Path" onclick="drawPath();" />
+  <input type="button" value="Draw Circle" onclick="drawCircle();" />
+  <input type="button" value="Write Text" onclick="writeText();" />
+  <input type="button" value="Apply Circle Gradient" onclick="createLinear();" />
+  <input type="button" value="Draw Image" onclick="drawImg();" />
 
+  <script>
+    function fill() {
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+      clearCanvas(ctx, 0, 0, 200, 100);
+      ctx.fillStyle = "#FF0000";
+      ctx.fillRect(0, 0, 150, 75);
+    }
+    function clearCanvas(ctx, x, y, width, height) {
+      ctx.fillSytle = "#FFFFFF";
+      ctx.fillRect(x, y, width, height);
+    }
+    function drawPath() {
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+      clearCanvas(ctx, 0, 0, 200, 100);
+      ctx.moveTo(0, 0);
+      ctx.lineTo(200, 100);
+      ctx.stroke();
+    }
+    function drawCircle() {
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+      clearCanvas(ctx, 0, 0, 200, 100);
+      ctx.beginPath();
+      ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+      ctx.stroke();
+    }
+    function writText() {
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+      clearCanvas(ctx, 0, 0, 200, 100);
+      ctx.font = "30px Arial";
+      ctx.strokeText("Canvas", 10, 50);
+    }
+    function createLinear() {
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+      clearCanvas(ctx, 0, 0, 200, 100);
+
+      //create gradient
+      var grd = ctx.createRadialGradient;
+      grd.addColorStop(0, "red");
+      grd.addColorStop(1, "white");
+
+      //Fill with gradient
+      ctx.fillStyle = grd;
+      ctx.fillRect(10, 10150, 80);
+    }
+    function drawImg() {
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+      clearCanvas(ctx, 0, 0, 200, 100);
+      var img = document.getElementById("scream");
+      ctx.drawImage(img, 0, 0);
+    }
+  </script>
 </body>
+
 </html>

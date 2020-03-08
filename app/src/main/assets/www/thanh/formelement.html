@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h3>Datalist</h3>
+  <label for="ice-cream-choice">Choose a flavor:</label>
+  <form action="">
+    <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+
+    <datalist id="ice-cream-flavors">
+      <option value="Chocolate">
+      <option value="Coconut">
+      <option value="Mint">
+      <option value="Strawberry">
+      <option value="Vanilla">
+    </datalist>
+  </form>
+  <hr>
+  <h3>Keygen</h3>
+  <form action="#" method="get">
+    Username: <input type="text" name="usr_name">
+    Encryption: <keygen name="security">
+    <input type="submit">
+  </form>
+  <hr>
+  <h3>Output</h3>
+  <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+    0<input type="range" id="a" value="50">100
+    +
+    <input type="number" id="b" value="50">
+    =
+    <output name="x" for="a b"></output>
+  </form>
+  <hr>
+  <h3>Autocomplete</h3>
+  <form action="#" autocomplete="on">
+    <input type="text" name="test">
+  </form>
+  <hr>
+  <h3>Novalidate</h3>
+  <form action="#" novalidate>
+    <input type="text" name="test" type="email" required>
+    <input type="text" name="moreTest" type="number">
+    <button type="submit">Submit</button>
+  </form>
+  <hr>
+  <h3>Auto focus</h3>
+  <form action="#">
+    <input type="text" name="test" type="email" autofocus>
+  </form>
+  <hr>
+  <h3>Outside-form input</h3>
+  <form action="#" id="form1">
+    <input name="first" type="text">
+    <button type="submit">Submit</button>
+  </form>
+  <input type="text" name="second" form="form1">
+  <hr>
+  <h3>Outside-form input</h3>
+  <form action="/action_page.php">
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <input type="submit" value="Submit">
+    <input type="submit" formaction="/action_page2.php" value="Submit to another page">
+  </form>
+  <hr>
+  <h3>Form-enctype</h3>
+  <form action="/action_page_binary.asp" method="post">
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <input type="submit" value="Submit">
+    <input type="submit" formenctype="multipart/form-data" value="Submit as Multipart/form-data">
+  </form>
+  <hr>
+  <h3>Form-Target</h3>
+  <!-- indicates where to display the response that is received after submitting the form. -->
+  <form action="/action_page.php">
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <input type="submit" value="Submit as normal">
+    <input type="submit" formtarget="_blank" value="Submit to a new window">
+  </form>
+  <hr>
+  <h3>Height and width of intput image</h3>
+  <input type="image" src="./cat.jpg" width="300">
+  <hr>
+  <h3>Multiple value</h3>
+  <form action="#">
+    <input type="email" name="emailAddr" size="50" list="contacts" multiple>
+    <datalist id="contacts">
+      <option value="homer@simpson.com">
+      <option value="barney@rubble.ws">
+      <option value="fred@flinstone.cc">
+      <option value="peter@griffin.org">
+    </datalist>
+    <button>Submit</button>
+  </form>
+  <p>Enter multiple email addresses, separated by a comma.</p>
+  <hr>
+  <h3>Pattern</h3>
+  <form action="#">
+    <label for="country_code">Country code:</label>
+    <input type="text" id="country_code" name="country_code"
+    pattern="[A-Za-z]{3}" title="Three letter country code"><br><br>
+    <input type="submit">
+  </form>
+  <hr>
+  <h3>Placeholder</h3>
+  <form action="#">
+    <input type="text" placeholder="Enter some text">
+  </form>
+</body>
+
+</html>
